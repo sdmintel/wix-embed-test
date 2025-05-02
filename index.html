@@ -5,44 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funder Filtration Tool</title>
     <style>
-        /* Copy all styles from styles.css here */
-        body { font-family: Arial, sans-serif; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .filters { margin: 20px 0; display: flex; gap: 10px; }
-        .funder-list { display: grid; gap: 20px; }
-        .funder-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
+        .filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .filter-group { display: flex; flex-direction: column; }
+        .filter-group label { margin-bottom: 5px; font-weight: bold; }
+        input, select { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .funder-list { display: grid; gap: 20px; margin-top: 30px; }
+        .funder-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Funder Filtration Tool</h1>
-        <div class="filters">
-            <input type="text" id="searchInput" placeholder="Search funders...">
-            <select id="industryFilter">
-                <option value="">All Industries</option>
-                <!-- Add industry options here -->
-            </select>
-            <!-- Add other filters -->
-        </div>
+        <form class="filters">
+            <div class="filter-group">
+                <label for="timeInBusiness">Time in Business (Months)</label>
+                <input type="number" id="timeInBusiness" min="0">
+            </div>
+            <div class="filter-group">
+                <label for="avgMonthlyRevenue">Average Monthly Revenue</label>
+                <input type="number" id="avgMonthlyRevenue" min="0">
+            </div>
+            <div class="filter-group">
+                <label for="requestedAmount">Requested Amount</label>
+                <input type="number" id="requestedAmount" min="0">
+            </div>
+            <div class="filter-group">
+                <label for="industryType">Industry Type</label>
+                <select id="industryType">
+                    <option value="">Select Industry</option>
+                    <!-- Populate from spreadsheet data -->
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="ficoScore">FICO Score</label>
+                <input type="number" id="ficoScore" min="300" max="850">
+            </div>
+            <div class="filter-group">
+                <label for="stateOfIncorporation">State of Incorporation</label>
+                <select id="stateOfIncorporation">
+                    <option value="">Select State</option>
+                    <!-- Add all US states -->
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="negativeBalanceDays">Negative Balance Days (last 3 months)</label>
+                <input type="number" id="negativeBalanceDays" min="0" max="90">
+            </div>
+            <div class="filter-group">
+                <label for="currentPositions">Current Positions</label>
+                <select id="currentPositions">
+                    <option value="">Select Position</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+        </form>
         <div id="funderList" class="funder-list">
             <!-- Funders will be populated here -->
         </div>
     </div>
 
     <script>
-        // Embed the funder data directly here
+        // Use the actual funder data from the spreadsheet
         const FUNDER_DATA = [
-            // Copy data from data.js here
-            {
-                name: 'Example Funder 1',
-                industry: 'Technology',
-                description: 'Description here'
-            },
-            // Add all other funder data
+            // Add the complete funder data from the spreadsheet here
         ];
 
-        // Copy all JavaScript from app.js here
-        // Include the filtering logic and DOM manipulation code
+        document.addEventListener('DOMContentLoaded', function() {
+            // Implement filtering logic based on all fields
+            // Use the actual connection rules from the spreadsheet
+        });
     </script>
 </body>
 </html>
