@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embed Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <h1>Embed Test</h1>
-    <p>Simple test page for Wix iframe embedding</p>
+    <div id="container">
+        <h1>Funder Filtration Tool - Embed Test</h1>
+        <iframe src="index.html" title="Funder Filtration Tool"></iframe>
+    </div>
 </body>
 </html>
