@@ -1,30 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Funder Filter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funder Filtration Tool</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .filters { margin: 20px 0; }
-        input, select { margin: 5px; padding: 5px; }
+        /* Copy all styles from styles.css here */
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .filters { margin: 20px 0; display: flex; gap: 10px; }
+        .funder-list { display: grid; gap: 20px; }
+        .funder-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Funder Filter</h1>
+        <h1>Funder Filtration Tool</h1>
         <div class="filters">
-            <input type="text" placeholder="Search funders...">
-            <select>
-                <option>All Industries</option>
-                <option>Technology</option>
-                <option>Healthcare</option>
+            <input type="text" id="searchInput" placeholder="Search funders...">
+            <select id="industryFilter">
+                <option value="">All Industries</option>
+                <!-- Add industry options here -->
             </select>
+            <!-- Add other filters -->
         </div>
-        <div id="results">
-            <p>Sample Funder 1</p>
-            <p>Sample Funder 2</p>
+        <div id="funderList" class="funder-list">
+            <!-- Funders will be populated here -->
         </div>
     </div>
+
+    <script>
+        // Embed the funder data directly here
+        const FUNDER_DATA = [
+            // Copy data from data.js here
+            {
+                name: 'Example Funder 1',
+                industry: 'Technology',
+                description: 'Description here'
+            },
+            // Add all other funder data
+        ];
+
+        // Copy all JavaScript from app.js here
+        // Include the filtering logic and DOM manipulation code
+    </script>
 </body>
 </html>
 
